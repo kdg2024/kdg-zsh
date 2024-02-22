@@ -1,0 +1,12 @@
+if [ -e /opt/homebrew/bin/brew ]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+  if [ -d $(brew --prefix)/opt/coreutils/libexec/gnubin ]; then
+    export PATH="$(brew --prefix)/opt/coreutils/libexec/gnubin":$PATH
+    export PATH="$(brew --prefix)/opt/coreutils/libexec/gnuman":$PATH
+  else
+    echo "Please type 'brew install coreutils'"
+  fi
+else
+  echo "Please install homebrew"
+fi
+
