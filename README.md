@@ -96,7 +96,7 @@ exec zsh
 - `lla`で`ls -la`が実行される（`-a`と`-l`をまとめて`-la`）
 - 入力中に`ctrl+r`で履歴検索
 <!-- ![](fig/screen2_hist.png) -->
-<img src="fig/screen2_hist.png" width="300">
+<img src="fig/screen2_hist.png" width="400">
 - `k`で`ls`をよりカラフルかつgitの情報等を加えたものを実行できる
   - `ka`で`k -a`を実行できる（隠しファイルも表示）
 <!-- ![](fig/screen3_k.png) -->
