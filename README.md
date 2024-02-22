@@ -11,7 +11,9 @@ Macでは2019年以降デフォルトになっている．
 Macの場合はhomebrewでcoreutils
 を入れてあることが前提（`git clone`に必要なのと，`ls`時の色を明るくするにも必要）
 であるのでまずはそこから．homebrewがインストールされていない場合は
-https://brew.sh/ja/  
+
+https://brew.sh/ja/
+
 このサイトにあるコマンドをターミナルに貼り付けて実行すればok．
 少し時間がかかる．
 実行後パスを通すように英語で指示されるが，
@@ -54,7 +56,7 @@ mv .zshrc .zsh/
 ```
 ln -sf .zsh/dot.zshrc ~/.zshrc
 ```
-ここで分岐．デザインを自分で選びたければここで
+**ここで分岐**．デザインを自分で選びたければここで
 設定ファイルの再読み込み（反映）．
 ```
 exec zsh
@@ -85,14 +87,31 @@ cat ~/.zsh/add.zshrc_sample_for_mac >> ~/.zsh/add.zshrc
 ```
 exec zsh
 ```
-### 仕様
+## 機能
+- `cd`コマンドを実行したときに自動で`ls`が実行される
+- `cd`無しでもディレクトリのパスを入力すれば移動
+- 補完機能においては大文字，小文字を区別しない
+- `la`で`ls -a`が実行される（隠しファイルも表示）
+- `ll`で`ls -l`が実行される（詳細を表示）
+- `lla`で`ls -la`が実行される（`-a`と`-l`をまとめて`-la`）
+- 入力中に`ctrl+r`で履歴検索
+![](fig/screen2_hist.png)
+- `k`で`ls`をよりカラフルかつgitの情報等を加えたものを実行できる
+  - `ka`で`k -a`を実行できる（隠しファイルも表示）
+![](fig/screen3_k.png)
+- gitの管理化にあるディレクトリで`git open`を実行するとブラウザが起動してgithub等のページが開く
+
 ## メモ
+- プラグインの管理には[Zinit](https://github.com/zdharma-continuum/zinit)
+を使用しており，それによるプラグインの読み込みは
+[zinitrc](zinitrc)に集約したうえで`~/.zshrc`に読み込む．
+- プラグインの中でも[Powerlebel10k](https://github.com/romkatv/powerlevel10k)
+が特に中核となっている．その他はコメントアウトを参照したり
+ググったりし欲しい（作った張本人もこの文章を書いている時点で
+作ってから1年以上経っているためどれがどれだか覚えていない）．
 - Zinitnの更新: `zinit self-update`
 - プラグインの更新: `zinit update`
 - Powerlebel10kの再設定: `p10k configure`
   - 最後の`zshrc`の問は`n`
 - dircolorsはデフォルトからシンボリックリンクのみ31（赤）から36（シアン）に変更
 
-## リンク
-- [Zinit](https://github.com/zdharma-continuum/zinit)
-- [Powerlebel10k](https://github.com/romkatv/powerlevel10k)
