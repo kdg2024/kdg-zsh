@@ -49,8 +49,8 @@ git clone git@github.com:kdg2024/kdg-zsh.git .zsh
 `~/.zsh/add.zshrc`とする
 （gitの管理下にある`~/.zsh/dot.zshrc`に追記してもいいがしたくない）．
 ```
-mv .zshrc .zsh/
-# mvは移動またはリネームを行うコマンド
+mv .zshrc .zsh/add.zshrc
+# mvは移動とリネームを行うコマンド
 ```
 その後，シンボリックリンクを貼る．
 ```
